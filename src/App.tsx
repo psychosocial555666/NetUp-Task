@@ -1,11 +1,27 @@
 import React from 'react';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import { MainContainer } from './App.styles';
+import BackgroundCarousel from './components/BackgroundCarousel/BackgroundCarousel';
+import CardsSlider from './components/CardsSlider/CardsSlider';
+import Header from './components/Header/Header';
+import Search from './components/Search/Search';
+import Title from './components/Title/Title';
+import { dataSetter } from './redux/reducer';
 
 const App: React.FC = () => {
-  return <h1 style={{ textAlign: 'center' }}>App template</h1>;
+
+  React.useEffect(() => {
+    dataSetter.getData();
+  }, []);
+
+  return (
+    <MainContainer>
+      <BackgroundCarousel />
+      <Header />
+      <Search />
+      <Title />
+      <CardsSlider />
+    </MainContainer>
+  );
 };
 
 export default App;
