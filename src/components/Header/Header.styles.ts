@@ -7,6 +7,8 @@ export const StyledHeader = styled.header`
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12.5px);
+  position: relative;
+  z-index: 2;
 `;
 
 export const HeaderContainer = styled.div`
@@ -17,4 +19,15 @@ export const HeaderContainer = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 1200px) {
+    justify-content: flex-end;
+    padding: 0px 30px;
+  }
+  `;
+  
+  export const MainLink = styled.a`
+  display: flex;
+  @media (max-width: 1200px) {
+    margin-right: auto;
+  }
 `;

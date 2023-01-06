@@ -1,11 +1,4 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-.some_item {
-  display: flex;
-  align-items: flex-end;
-  background-color: #fff;
-  transition: position 0.01s ease-in-out;
+  font-family: 'Source Sans Pro', sans-serif;
 }

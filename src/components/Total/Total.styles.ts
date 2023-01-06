@@ -9,17 +9,17 @@ const fidein = keyframes`
   }
 `;
 
-export const TitleContainer = styled.section`
+export const TotalContainer = styled.section`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 56px 0;
+  justify-content: flex-start;
+  padding: 56px 0 16px 56px;
   animation: ${fidein} ease-in-out;
   animation-duration: 0.5s;
 `;
 
-export const TitleText = styled.p`
+export const TotalText = styled.p`
   display: flex;
   font-family: "Ubuntu";
   font-weight: 700;

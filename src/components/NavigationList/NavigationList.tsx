@@ -1,36 +1,19 @@
 import React from 'react';
-import { DiscoverIcon, LiveTVIcon, MoviesIcon, MyStuffIcon, TVShowsIcon } from '../../common/Icons/Icons';
-import { List, NavItem, NavLink, NavList } from './NavigationList.styles';
-
-const navigationTemplate = [
-  {
-    title: 'Discover',
-    icon: <DiscoverIcon />,
-  },
-  {
-    title: 'Live TV',
-    icon: <LiveTVIcon />,
-  },
-  {
-    title: 'TV Shows',
-    icon: <TVShowsIcon />,
-  },
-  {
-    title: 'Movies',
-    icon: <MoviesIcon />,
-  },
-  {
-    title: 'My Stuff',
-    icon: <MyStuffIcon />,
-  },
-];
+import { navigationTemplate } from '../../common/const';
+import { CloseMenuIcon, MenuIcon } from '../../common/Icons/Icons';
+import { List, NavItem, NavLink, NavList, NavToggle } from './NavigationList.styles';
 
 const NavigationList: React.FC = () => {
+  const [toggled, setToggled] = React.useState(false);
+
+  const toggleButtonClickHandler = () => setToggled(!toggled);
+
   return (
     <NavList>
-      <List>
+      <NavToggle onClick={toggleButtonClickHandler}>{toggled ? <CloseMenuIcon /> : <MenuIcon />}</NavToggle>
+      <List toggled={toggled}>
         {navigationTemplate.map(item => (
-          <NavItem key={item.title} >
+          <NavItem key={item.title}>
             <NavLink href='./'>
               {item.icon}
               {item.title}

@@ -1,12 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fidein = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const CardsSliderContainer = styled.section`
   position: relative;
   overflow-x: hidden;
-  cursor: pointer;
-  `;
-  
-  export const CardsSliderList = styled.ul`
+  cursor: grab;
+  animation: ${fidein} ease-in-out;
+  animation-duration: 0.5s;
+`;
+
+export const CardsSliderList = styled.ul`
   display: flex;
   list-style: none;
   padding: 0 56px;
@@ -18,13 +29,9 @@ export const CardsSliderContainer = styled.section`
 
 export const CardsSliderItem = styled.li`
   display: flex;
-  width: 368px;
-  height: 335px;
-  background-color: aquamarine;
-  border-radius: 8px;
+  border-radius: 4px;
   justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+  align-items: flex-start;
   flex-shrink: 0;
   &:not(:last-child) {
     margin-right: 16px;

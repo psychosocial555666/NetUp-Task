@@ -38,6 +38,32 @@ export const MainLogo: React.FC = () => {
   );
 };
 
+export const MenuIcon: React.FC = () => {
+  return (
+    <svg
+      width='24px'
+      height='24px'
+      viewBox='0 0 24 24'
+      xmlns='http://www.w3.org/2000/svg'
+      id='menu-alt'
+      className='icon glyph'
+    >
+      <path d='M21,19H3a1,1,0,0,1,0-2H21a1,1,0,0,1,0,2Z' fill='#ffffff'></path>
+      <path d='M21,13H3a1,1,0,0,1,0-2H21a1,1,0,0,1,0,2Z' fill='#ffffff'></path>
+      <path d='M21,7H3A1,1,0,0,1,3,5H21a1,1,0,0,1,0,2Z' fill='#ffffff'></path>
+    </svg>
+  );
+};
+
+export const CloseMenuIcon: React.FC = () => {
+  return (
+    <svg width='24px' height='24px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path d='M18 6L6 18' stroke='#ffffff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+      <path d='M6 6L18 18' stroke='#ffffff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+    </svg>
+  );
+};
+
 export const DiscoverIcon: React.FC = () => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -147,12 +173,23 @@ export const SearchSmallIcon: React.FC = () => {
   );
 };
 
+export const PlayIcon: React.FC = () => {
+  return (
+    <svg width='10' height='12' viewBox='0 0 10 12' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        d='M1.50617 11.8332C1.17695 12.0429 0.843457 12.0549 0.505679 11.869C0.16856 11.6838 0 11.3975 0 11.0103V0.99001C0 0.602754 0.16856 0.316185 0.505679 0.130302C0.843457 -0.0549357 1.17695 -0.0426725 1.50617 0.167091L9.55556 5.17722C9.85185 5.37084 10 5.64515 10 6.00014C10 6.35512 9.85185 6.62943 9.55556 6.82306L1.50617 11.8332Z'
+        fill='#ABFFCE'
+      />
+    </svg>
+  );
+};
+
 export const CrossIcon: React.FC = () => {
   return (
     <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M5.53896 3.59141C4.99835 3.03854 4.12185 3.03854 3.58124 3.59141C3.04063 4.14428 3.04063 5.04064 3.58124 5.59351L10.0417 12.2004L3.97253 18.4071C3.43192 18.9599 3.43192 19.8563 3.97253 20.4091C4.51314 20.962 5.38964 20.962 5.93025 20.4091L11.9994 14.2025L18.0684 20.409C18.609 20.9619 19.4855 20.9619 20.0261 20.409C20.5667 19.8562 20.5667 18.9598 20.0261 18.407L13.9571 12.2004L20.4173 5.59364C20.958 5.04079 20.958 4.14441 20.4173 3.59154C19.8768 3.03868 19.0002 3.03868 18.4597 3.59154L11.9994 10.1983L5.53896 3.59141Z'
         fill='#393939'
       />

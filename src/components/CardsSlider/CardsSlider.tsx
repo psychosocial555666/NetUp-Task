@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { dragXHandler } from '../../common/utils';
+import Card from '../Card/Card';
 import { CardsSliderContainer, CardsSliderItem, CardsSliderList } from './CardsSlider.styles';
+import { IProps, StateType } from './CardsSlider.types';
 
-const CardsSlider: React.FC = () => {
+const mapStateToProps = (state: StateType) => ({
+  items: state.items,
+  filtered: state.filtered,
+});
+
+const CardsSlider: React.FC<IProps> = ({ items, filtered }) => {
   const listRef = React.createRef<HTMLUListElement>();
   const pressedRef = React.useRef(false);
   const mousePosRef = React.useRef(0);
@@ -27,7 +35,6 @@ const CardsSlider: React.FC = () => {
       e.stopPropagation();
       const delta = mousePosRef.current - e.clientX;
       mousePosRef.current = e.clientX;
-      console.log(delta);
       dragXHandler(listRef.current, delta, 1);
     }
   };
@@ -40,21 +47,20 @@ const CardsSlider: React.FC = () => {
       onMouseMove={mouseMoveHandler}
     >
       <CardsSliderList ref={listRef}>
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
-        <CardsSliderItem />
+        {filtered.length > 0
+          ? filtered.map((item, index) => (
+              <CardsSliderItem key={item.title + index}>
+                <Card item={item} />
+              </CardsSliderItem>
+            ))
+          : items.map((item, index) => (
+              <CardsSliderItem key={item.title + index}>
+                <Card item={item} />
+              </CardsSliderItem>
+            ))}
       </CardsSliderList>
     </CardsSliderContainer>
   );
 };
 
-export default CardsSlider;
+export default connect(mapStateToProps)(CardsSlider);

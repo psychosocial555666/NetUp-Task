@@ -12,3 +12,8 @@ export const dragXHandler = (target: HTMLUListElement | null, delta: number, mod
     target.style.left = `${newLeft}px`;
   }
 } 
+
+export const randomInteger = (min: number, max: number) => {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}

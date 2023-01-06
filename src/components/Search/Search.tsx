@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { CrossIcon, SearchSmallIcon } from '../../common/Icons/Icons';
+import { dataSetter } from '../../redux/reducer';
 import {
   ClearButton,
   SearchButton,
@@ -8,28 +10,40 @@ import {
   SearchInput,
   SearchInputLabel,
 } from './Search.styles';
+import { IProps, StateType } from './Search.types';
 
-const Search: React.FC = () => {
-  const [focused, setFocused] = React.useState(false);
-  const [inputString, setInputString] = React.useState('');
+const mapStateToProps = (state: StateType) => ({
+  focused: state.focused,
+  searchInput: state.searchInput,
+  loading: state.loading,
+});
 
-  const inputFocusHandler = () => setFocused(true);
+const Search: React.FC<IProps> = ({ focused, searchInput, loading }) => {
+  const inputFocusHandler = () => dataSetter.setFocused(true);
 
   const inputBlurlurHandler = () => {
-    if (inputString === '') setFocused(false);
+    if (searchInput === '') dataSetter.setFocused(false);
   };
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputString(e.target.value);
+    e.preventDefault();
+    dataSetter.setSearchInput(e.target.value);
   };
 
-  const clearButtonChangeHandler = () => {
-    setInputString('');
-    setFocused(false);
+  const clearButtonChangeHandler = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    dataSetter.setSearchInput('');
+    dataSetter.setFiltered('');
+    dataSetter.setFocused(false);
+  };
+
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    dataSetter.setFiltered(searchInput);
   };
 
   return (
-    <SearchContainer focused={focused}>
+    <SearchContainer focused={focused} onSubmit={submitHandler} action="POST">
       <SearchInputLabel>
         <SearchInput
           placeholder='Search'
@@ -37,13 +51,15 @@ const Search: React.FC = () => {
           onBlur={inputBlurlurHandler}
           onChange={inputChangeHandler}
           focused={focused}
-          value={inputString}
+          type='text'
+          value={searchInput}
+          disabled={loading}
         />
-        <ClearButton focused={focused && inputString.length > 0} onClick={clearButtonChangeHandler} >
+        <ClearButton type="reset" focused={focused && searchInput.length > 0} onClick={clearButtonChangeHandler}>
           <CrossIcon />
         </ClearButton>
       </SearchInputLabel>
-      <SearchButton>
+      <SearchButton type="submit" disabled={loading}>
         <SearchButtonText>search</SearchButtonText>
         <SearchSmallIcon />
       </SearchButton>
@@ -51,4 +67,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default connect(mapStateToProps)(Search);

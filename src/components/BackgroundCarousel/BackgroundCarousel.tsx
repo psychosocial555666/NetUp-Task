@@ -22,7 +22,7 @@ const BackgroundCarousel: React.FC<IProps> = ({ images }) => {
   return (
     <Container>
       {images.map((item, index) => (
-        <Image src={`../api/${item.url}`} active={index === current} />
+        <Image key={item.url} src={`../api/${item.url}`} active={index === current} />
       ))}
     </Container>
   );
