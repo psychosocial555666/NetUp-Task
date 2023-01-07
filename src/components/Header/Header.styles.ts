@@ -23,9 +23,9 @@ export const HeaderContainer = styled.div`
     justify-content: flex-end;
     padding: 0px 30px;
   }
-  `;
-  
-  export const MainLink = styled.a`
+`;
+
+export const MainLink = styled.a`
   display: flex;
   @media (max-width: 1200px) {
     margin-right: auto;

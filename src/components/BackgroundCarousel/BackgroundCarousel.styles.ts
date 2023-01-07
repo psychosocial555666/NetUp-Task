@@ -21,14 +21,14 @@ export const Image = styled.div<IImage>`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: ${props => props.active ? 1 : 0};
+  z-index: ${props => (props.active ? 1 : 0)};
   background-position: (0, 0);
   background-repeat: no-repeat;
   background-size: cover;
   animation: ${props => props.active && fade} linear;
   animation-duration: 5.1s;
   background-image: url(${props => props.src || ''});
-  `;
+`;
 
 export const Container = styled.div`
   width: 100%;

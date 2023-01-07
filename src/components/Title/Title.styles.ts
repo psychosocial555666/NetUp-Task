@@ -21,7 +21,7 @@ export const TitleContainer = styled.section`
 
 export const TitleText = styled.p`
   display: flex;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-weight: 700;
   padding: 0;
   margin: 0;

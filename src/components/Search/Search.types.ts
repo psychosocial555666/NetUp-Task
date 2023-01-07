@@ -1,5 +1,5 @@
 export interface ISearchStyle {
-  focused: boolean
+  focused: boolean;
 }
 
 export type StateType = {

@@ -42,7 +42,7 @@ export const store = configureStore({
 
 export const dataSetter = {
   getData() {
-    fetch('./api/discover')
+    fetch('/discover')
       .then(data => data.json())
       .then(data => {
         store.dispatch(setBackgrounds(data.backgrounds));
@@ -58,17 +58,17 @@ export const dataSetter = {
   setLoading(status: boolean) {
     store.dispatch(setLoading(status));
   },
-  setFiltered(string: string ) {
-    if(string.length === 0) {
+  setFiltered(string: string) {
+    if (string.length === 0) {
       store.dispatch(setFiltered([]));
       return;
     }
     store.dispatch(setLoading(true));
     const items = [...store.getState().items];
-    const filteredItems = items.filter((item: ItemType) => (item.title.toLowerCase().indexOf(string.toLowerCase()) >= 0));
+    const filteredItems = items.filter((item: ItemType) => item.title.toLowerCase().indexOf(string.toLowerCase()) >= 0);
     setTimeout(() => {
       store.dispatch(setFiltered(filteredItems));
       store.dispatch(setLoading(false));
-    }, randomInteger(0, 1000))
+    }, randomInteger(0, 1000));
   },
 };

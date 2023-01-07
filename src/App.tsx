@@ -16,7 +16,7 @@ const mapStateToProps = (state: StateType) => ({
   filtered: state.filtered,
 });
 
-const App: React.FC<IProps> = ({focused, filtered}) => {
+const App: React.FC<IProps> = ({ focused, filtered }) => {
   React.useEffect(() => {
     dataSetter.getData();
   }, []);
@@ -27,7 +27,7 @@ const App: React.FC<IProps> = ({focused, filtered}) => {
       <Header />
       <Search />
       {!focused && <Title />}
-      {filtered.length > 0 && <Total length={filtered.length}/>}
+      {filtered.length > 0 && <Total length={filtered.length} />}
       {(!focused || filtered.length > 0) && <CardsSlider />}
     </MainContainer>
   );

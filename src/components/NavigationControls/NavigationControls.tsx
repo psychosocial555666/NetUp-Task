@@ -10,7 +10,7 @@ const NavigationControls: React.FC = () => {
       </ControlButton>
       <ControlButton>
         <AccountIcon />
-        <Marker show/>
+        <Marker show />
       </ControlButton>
     </ControlsContainer>
   );

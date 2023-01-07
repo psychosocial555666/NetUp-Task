@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IMarker {
-  show: boolean
+  show: boolean;
 }
 
 export const ControlsContainer = styled.div`
@@ -12,7 +12,7 @@ export const ControlsContainer = styled.div`
 `;
 
 export const Marker = styled.span<IMarker>`
-  display: ${props => props.show ? 'flex' : 'none'}};
+  display: ${props => (props.show ? 'flex' : 'none')}};
   position: absolute;
   width: 8px;
   height: 8px;

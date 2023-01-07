@@ -18,19 +18,19 @@ const jump = keyframes`
 
 export const SearchContainer = styled.form<ISearchStyle>`
   display: flex;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   align-items: center;
   justify-content: center;
-  padding-top: ${props => props.focused ? "120px" : "250px"};
+  padding-top: ${props => (props.focused ? '120px' : '250px')};
   transition: padding 0.3s ease-in-out;
   animation: ${props => props.focused && jump} ease-in-out;
   animation-duration: 0.5s;
   width: 1127px;
   max-width: 80%;
   margin: 0 auto;
-  `;
-  
-  export const SearchButton = styled.button`
+`;
+
+export const SearchButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,10 +56,10 @@ export const SearchContainer = styled.form<ISearchStyle>`
 `;
 
 export const ClearButton = styled.button<ISearchStyle>`
-  display: ${props => props.focused ? 'flex' : 'none'};
+  display: ${props => (props.focused ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
-  position: absolute; 
+  position: absolute;
   top: 16px;
   right: 16px;
   padding: 0;
@@ -75,18 +75,18 @@ export const SearchButtonText = styled.span`
 export const SearchInput = styled.input<ISearchStyle>`
   display: flex;
   flex-grow: 1;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   flex-direction: row;
   align-items: center;
   position: relative;
   padding: 14px 24px;
-  background: ${props => props.focused ? "#fff" : "rgba(255, 255, 255, 0.1)"};
+  background: ${props => (props.focused ? '#fff' : 'rgba(255, 255, 255, 0.1)')};
   border-width: 1px 0px 1px 1px;
   border-radius: 4px 0px 0px 4px;
   font-size: 20px;
   line-height: 25px;
   border-color: #ffffff;
-  color: ${props => props.focused ? "#232323" : "#6f6f6f"};
+  color: ${props => (props.focused ? '#232323' : '#6f6f6f')};
   outline: none;
   transition: background-color 0.3s ease-in-out;
   &:hover {
@@ -94,7 +94,7 @@ export const SearchInput = styled.input<ISearchStyle>`
     color: #232323;
   }
   &:disabled {
-    background-color: rgba(255, 255, 255, 0.1)
+    background-color: rgba(255, 255, 255, 0.1);
   }
 `;
 

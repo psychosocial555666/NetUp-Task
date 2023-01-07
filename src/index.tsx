@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './redux/reducer';
-import 'virtual:fonts.css'
 import App from './App';
 import './index.css';
+import '@fontsource/source-sans-pro';
+import '@fontsource/ubuntu';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

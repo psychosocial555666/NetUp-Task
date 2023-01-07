@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { dragXHandler } from '../../common/utils';
+// import { dragXHandler } from '../../common/utils';
 import Card from '../Card/Card';
 import { CardsSliderContainer, CardsSliderItem, CardsSliderList } from './CardsSlider.styles';
 import { IProps, StateType } from './CardsSlider.types';
@@ -16,8 +16,7 @@ const CardsSlider: React.FC<IProps> = ({ items, filtered }) => {
   const mousePosRef = React.useRef(0);
 
   const listScrollHandler = (e: React.WheelEvent) => {
-    e.stopPropagation();
-    dragXHandler(listRef.current, e.deltaY, 1);
+    e.currentTarget.scrollBy(e.deltaY, 0);
   };
 
   const mouseDownHandler = (e: React.MouseEvent) => {
@@ -32,21 +31,21 @@ const CardsSlider: React.FC<IProps> = ({ items, filtered }) => {
 
   const mouseMoveHandler = (e: React.MouseEvent) => {
     if (pressedRef.current) {
-      e.stopPropagation();
       const delta = mousePosRef.current - e.clientX;
       mousePosRef.current = e.clientX;
-      dragXHandler(listRef.current, delta, 1);
+      e.currentTarget.scrollBy(delta, 0);
     }
   };
 
   return (
-    <CardsSliderContainer
-      onWheel={listScrollHandler}
-      onMouseDown={mouseDownHandler}
-      onMouseUp={mouseUpHandler}
-      onMouseMove={mouseMoveHandler}
-    >
-      <CardsSliderList ref={listRef}>
+    <CardsSliderContainer>
+      <CardsSliderList
+        ref={listRef}
+        onWheel={listScrollHandler}
+        onMouseDown={mouseDownHandler}
+        onMouseUp={mouseUpHandler}
+        onMouseMove={mouseMoveHandler}
+      >
         {filtered.length > 0
           ? filtered.map((item, index) => (
               <CardsSliderItem key={item.title + index}>

@@ -1,4 +1,4 @@
-import { ItemType } from "./components/CardsSlider/CardsSlider.types";
+import { ItemType } from './components/CardsSlider/CardsSlider.types';
 
 export type StateType = {
   searchInput: string;

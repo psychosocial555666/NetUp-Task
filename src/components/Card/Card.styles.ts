@@ -19,14 +19,14 @@ const jump = keyframes`
 export const CardItem = styled.div`
   position: relative;
   display: flex;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   flex-direction: column;
   width: 368px;
   user-select: none;
   overflow: hidden;
-  `;
-  
-  export const CardImage = styled.div<IImageStyle>`
+`;
+
+export const CardImage = styled.div<IImageStyle>`
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -34,8 +34,7 @@ export const CardItem = styled.div`
   height: 208px;
   border-radius: 4px;
   margin-bottom: 16px;
-  background: url(${props => `../api/${props.poster}`}) no-repeat, url(${props =>
-  `../api/${props.keyframe}`}) no-repeat;
+  background: url(${props => `/${props.poster}`}) no-repeat, url(${props => `/${props.keyframe}`}) no-repeat;
   background-size: cover, cover;
   background-position: 0 ${props => (props.hovered ? '300px' : '0')}, 0 0;
   transition: background 0.5s ease-in-out;

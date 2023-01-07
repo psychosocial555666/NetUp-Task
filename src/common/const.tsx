@@ -1,10 +1,4 @@
-import {
-  DiscoverIcon,
-  LiveTVIcon,
-  MoviesIcon,
-  MyStuffIcon,
-  TVShowsIcon,
-} from './Icons/Icons';
+import { DiscoverIcon, LiveTVIcon, MoviesIcon, MyStuffIcon, TVShowsIcon } from './Icons/Icons';
 
 export const MINUTES = 60;
 

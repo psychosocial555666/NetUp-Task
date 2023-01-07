@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
   width: 100%;
@@ -6,4 +6,4 @@ export const MainContainer = styled.div`
   overflow-x: hidden;
   background: rgba(35, 35, 35, 0.8);
   position: relative;
-`
+`;

@@ -1,4 +1,4 @@
-import { ItemType } from "../CardsSlider/CardsSlider.types";
+import { ItemType } from '../CardsSlider/CardsSlider.types';
 
 export type StateType = {
   item: ItemType;

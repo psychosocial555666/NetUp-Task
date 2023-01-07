@@ -21,7 +21,7 @@ export const TotalContainer = styled.section`
 
 export const TotalText = styled.p`
   display: flex;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-weight: 700;
   padding: 0;
   margin: 0;

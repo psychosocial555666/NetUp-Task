@@ -20,11 +20,17 @@ export const CardsSliderContainer = styled.section`
 export const CardsSliderList = styled.ul`
   display: flex;
   list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0 56px;
   margin: 0;
   position: relative;
-  left: 0;
-  transition: left 0.01s ease-in-out;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
 `;
 
 export const CardsSliderItem = styled.li`

@@ -1,3 +1,3 @@
 export interface INavigationListStyle {
-  toggled: boolean
+  toggled: boolean;
 }

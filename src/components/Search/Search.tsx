@@ -43,7 +43,7 @@ const Search: React.FC<IProps> = ({ focused, searchInput, loading }) => {
   };
 
   return (
-    <SearchContainer focused={focused} onSubmit={submitHandler} action="POST">
+    <SearchContainer focused={focused} onSubmit={submitHandler} action='POST'>
       <SearchInputLabel>
         <SearchInput
           placeholder='Search'
@@ -55,11 +55,11 @@ const Search: React.FC<IProps> = ({ focused, searchInput, loading }) => {
           value={searchInput}
           disabled={loading}
         />
-        <ClearButton type="reset" focused={focused && searchInput.length > 0} onClick={clearButtonChangeHandler}>
+        <ClearButton type='reset' focused={focused && searchInput.length > 0} onClick={clearButtonChangeHandler}>
           <CrossIcon />
         </ClearButton>
       </SearchInputLabel>
-      <SearchButton type="submit" disabled={loading}>
+      <SearchButton type='submit' disabled={loading}>
         <SearchButtonText>search</SearchButtonText>
         <SearchSmallIcon />
       </SearchButton>
